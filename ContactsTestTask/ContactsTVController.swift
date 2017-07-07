@@ -20,13 +20,30 @@ class ContactsTVController: UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! ContactTVController
+        let contactID = { () -> String in
+            if let indexPath = tableView.indexPathForSelectedRow {
+                return self.vm.contactID(groupIndex: indexPath.section, index: indexPath.row)
+            }else{
+                return ""
+            }
+        }()
+        let vm = ContactScreenVM(contactID: contactID)
+        destVC.vm = vm
+    }
+    
 }
 
 // MARK: UITableViewDelegate
 extension ContactsTVController {
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     override public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 30
+        return 28
     }
 }
 

@@ -28,6 +28,10 @@
 		28FDE2611F0FC27C00E7F999 /* TTContactsAlphabetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE2601F0FC27C00E7F999 /* TTContactsAlphabetGroup.swift */; };
 		28FDE2631F0FC44200E7F999 /* TTContactShort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE2621F0FC44200E7F999 /* TTContactShort.swift */; };
 		28FDE2651F0FC91D00E7F999 /* AlphabetSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE2641F0FC91D00E7F999 /* AlphabetSource.swift */; };
+		28FDE26E1F0FD06500E7F999 /* ContactTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE26D1F0FD06500E7F999 /* ContactTVController.swift */; };
+		28FDE2701F0FD07100E7F999 /* ContactScreenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE26F1F0FD07100E7F999 /* ContactScreenVM.swift */; };
+		28FDE2741F0FDA2B00E7F999 /* PropertyEditingAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE2731F0FDA2B00E7F999 /* PropertyEditingAlertView.swift */; };
+		28FDE2761F0FDA7100E7F999 /* AlertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FDE2751F0FDA7100E7F999 /* AlertButton.swift */; };
 		595EE173D61B0F1CDF2086E5 /* Pods_ContactsTestTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7508DF5CE8E97A4882153781 /* Pods_ContactsTestTaskUITests.framework */; };
 		AD50B7CFC30C2BE1D525F167 /* Pods_ContactsTestTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0B550E32A0B0822163939AF /* Pods_ContactsTestTaskTests.framework */; };
 		D437C18E609787C22C2EF741 /* Pods_ContactsTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77F55CE02DC9F9D020861406 /* Pods_ContactsTestTask.framework */; };
@@ -80,6 +84,10 @@
 		28FDE2601F0FC27C00E7F999 /* TTContactsAlphabetGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTContactsAlphabetGroup.swift; sourceTree = "<group>"; };
 		28FDE2621F0FC44200E7F999 /* TTContactShort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTContactShort.swift; sourceTree = "<group>"; };
 		28FDE2641F0FC91D00E7F999 /* AlphabetSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetSource.swift; sourceTree = "<group>"; };
+		28FDE26D1F0FD06500E7F999 /* ContactTVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTVController.swift; sourceTree = "<group>"; };
+		28FDE26F1F0FD07100E7F999 /* ContactScreenVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactScreenVM.swift; sourceTree = "<group>"; };
+		28FDE2731F0FDA2B00E7F999 /* PropertyEditingAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyEditingAlertView.swift; sourceTree = "<group>"; };
+		28FDE2751F0FDA7100E7F999 /* AlertButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertButton.swift; sourceTree = "<group>"; };
 		4F346FED17FDCD01B8790DF1 /* Pods-ContactsTestTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ContactsTestTaskTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ContactsTestTaskTests/Pods-ContactsTestTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7508DF5CE8E97A4882153781 /* Pods_ContactsTestTaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsTestTaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F55CE02DC9F9D020861406 /* Pods_ContactsTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ContactsTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +210,7 @@
 		28FDE2491F0F87DD00E7F999 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				28FDE2711F0FDA1800E7F999 /* Views */,
 				28FDE2661F0FC99800E7F999 /* Helpers */,
 				28FDE25B1F0FBF1600E7F999 /* Screens */,
 				28FDE2171F0F876500E7F999 /* Main.storyboard */,
@@ -242,8 +251,8 @@
 		28FDE25B1F0FBF1600E7F999 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				28FDE25C1F0FBF3600E7F999 /* ContactsTVController.swift */,
-				28FDE25E1F0FC1DD00E7F999 /* ContactsScreenVM.swift */,
+				28FDE26C1F0FD03C00E7F999 /* Contact */,
+				28FDE26B1F0FD02F00E7F999 /* ContactsList */,
 			);
 			name = Screens;
 			sourceTree = "<group>";
@@ -254,6 +263,41 @@
 				28FDE2641F0FC91D00E7F999 /* AlphabetSource.swift */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		28FDE26B1F0FD02F00E7F999 /* ContactsList */ = {
+			isa = PBXGroup;
+			children = (
+				28FDE25C1F0FBF3600E7F999 /* ContactsTVController.swift */,
+				28FDE25E1F0FC1DD00E7F999 /* ContactsScreenVM.swift */,
+			);
+			name = ContactsList;
+			sourceTree = "<group>";
+		};
+		28FDE26C1F0FD03C00E7F999 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				28FDE26D1F0FD06500E7F999 /* ContactTVController.swift */,
+				28FDE26F1F0FD07100E7F999 /* ContactScreenVM.swift */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		28FDE2711F0FDA1800E7F999 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28FDE2721F0FDA1E00E7F999 /* Alerts */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		28FDE2721F0FDA1E00E7F999 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				28FDE2751F0FDA7100E7F999 /* AlertButton.swift */,
+				28FDE2731F0FDA2B00E7F999 /* PropertyEditingAlertView.swift */,
+			);
+			name = Alerts;
 			sourceTree = "<group>";
 		};
 		7BF8947903E27872B47A94ED /* Pods */ = {
@@ -566,16 +610,20 @@
 			files = (
 				28FDE2531F0F911E00E7F999 /* LaunchStorageInteractorFileSystem.swift in Sources */,
 				28FDE2631F0FC44200E7F999 /* TTContactShort.swift in Sources */,
+				28FDE2761F0FDA7100E7F999 /* AlertButton.swift in Sources */,
 				28FDE2161F0F876500E7F999 /* ViewController.swift in Sources */,
 				28FDE25D1F0FBF3600E7F999 /* ContactsTVController.swift in Sources */,
 				28FDE25F1F0FC1DD00E7F999 /* ContactsScreenVM.swift in Sources */,
 				28FDE24E1F0F8DEC00E7F999 /* DataManager.swift in Sources */,
+				28FDE2741F0FDA2B00E7F999 /* PropertyEditingAlertView.swift in Sources */,
+				28FDE2701F0FD07100E7F999 /* ContactScreenVM.swift in Sources */,
 				28FDE2141F0F876500E7F999 /* AppDelegate.swift in Sources */,
 				28FDE2571F0F978400E7F999 /* LaunchContactsStorage.swift in Sources */,
 				28FDE2651F0FC91D00E7F999 /* AlphabetSource.swift in Sources */,
 				28FDE2611F0FC27C00E7F999 /* TTContactsAlphabetGroup.swift in Sources */,
 				28FDE25A1F0FA91700E7F999 /* TTContactAndContactEntityParser.swift in Sources */,
 				28FDE2551F0F915900E7F999 /* ContactsStorageInteractorCoreData.swift in Sources */,
+				28FDE26E1F0FD06500E7F999 /* ContactTVController.swift in Sources */,
 				28FDE24C1F0F8CC900E7F999 /* TTContact.swift in Sources */,
 				28FDE21C1F0F876500E7F999 /* ContactsTestTask.xcdatamodeld in Sources */,
 				28FDE2501F0F8E0800E7F999 /* DataLayerProtocols.swift in Sources */,
