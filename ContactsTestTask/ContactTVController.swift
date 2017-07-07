@@ -11,7 +11,7 @@ import DTAlertViewContainer
 import RxSwift
 
 class ContactTVController: UITableViewController {
-
+    
     let disposeBag = DisposeBag()
     
     var vm: ContactScreenVM!
@@ -30,7 +30,7 @@ class ContactTVController: UITableViewController {
         
         self.initBindings()
     }
- 
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -40,9 +40,8 @@ class ContactTVController: UITableViewController {
     func initBindings() {
         
         _ = vm.contact.asObservable()
-        .subscribeOn(MainScheduler.instance)
-        .subscribe( onNext: { [weak self] (contact) in
-            DispatchQueue.main.async {
+            .subscribeOn(MainScheduler.instance)
+            .subscribe( onNext: { [weak self] (contact) in
                 guard let weakSelf = self else { return }
                 weakSelf.title = contact.firstName + " " + contact.lastName
                 
@@ -56,55 +55,14 @@ class ContactTVController: UITableViewController {
                 weakSelf.zipCodeLabel.text = contact.zipCode
                 
                 weakSelf.tableView.reloadData()
-            }
-        })
-        .disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
         
     }
     
     @IBAction func deleteContactButtonPressed(_ sender: Any) {
         vm.deleteContact()
-        navigationController?.popViewController(animated: true)
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "contactTVCellIdentifier", for: indexPath)
-        let cell = super.tableView(tableView, cellForRowAt: indexPath)
-        
-        switch indexPath.row {
-        case 0:
-            cell.detailTextLabel?.text = vm.contact.value.firstName
-            break
-        case 1:
-            cell.detailTextLabel?.text = vm.contact.value.lastName
-            break
-        case 2:
-            cell.detailTextLabel?.text = vm.contact.value.phoneNumber
-            break
-        case 3:
-            cell.detailTextLabel?.text = vm.contact.value.streetAddress1
-            break
-        case 4:
-            cell.detailTextLabel?.text = vm.contact.value.streetAddress2
-            break
-        case 5:
-            cell.detailTextLabel?.text = vm.contact.value.city
-            break
-        case 6:
-            cell.detailTextLabel?.text = vm.contact.value.state
-            break
-        case 7:
-            cell.detailTextLabel?.text = vm.contact.value.zipCode
-            break
-        default:
-            break
-        }
-        
-        return cell
-        }else{
-            return super.tableView(tableView, cellForRowAt: indexPath)
-        }
+        _ = navigationController?.popViewController(animated: true)
     }
     
 }
@@ -114,6 +72,7 @@ extension ContactTVController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 1 { return }
         let alertView = self.alertView(forIndex: indexPath.row)
         self.presentAlertView(alertView: alertView)
     }
@@ -134,7 +93,7 @@ extension ContactTVController {
     func calculateHeightForDeleteCell() -> CGFloat {
         let defaultHeight: CGFloat = 120.0
         let tvHeight = tableView.frame.size.height - (navigationController?.navigationBar.frame.size.height)!
-        let contentHeight = { () -> CGFloat in 
+        let contentHeight = { () -> CGFloat in
             var contentHeight: CGFloat = 0
             for row in 0..<tableView.dataSource!.tableView(tableView, numberOfRowsInSection: 0) {
                 contentHeight += tableView.delegate!.tableView!(tableView, heightForRowAt: IndexPath(row: row, section: 0))
@@ -211,4 +170,4 @@ extension ContactTVController {
     }
     
 }
- 
+
