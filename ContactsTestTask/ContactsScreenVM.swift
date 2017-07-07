@@ -32,9 +32,11 @@ class ContactsScreenVM: NSObject {
         for cntct in contacts {
             var symbolString = ""
             if cntct.fullName.characters.count > 0 {
-                symbolString = cntct.fullName
+                symbolString = cntct.fullName.uppercased()
             }
-            if symbolString.characters.count <= 0 { continue }
+            if symbolString.characters.count <= 0 {
+                continue
+            }
             let symbol = symbolString.substring(to: symbolString.index(symbolString.startIndex, offsetBy: 1))
             let group = self.group(forName: symbol, groups: groups)
             group.contacts.append(cntct)
@@ -57,7 +59,7 @@ class ContactsScreenVM: NSObject {
     private func group(forName name: String, groups: [TTContactsAlphabetGroup]) -> TTContactsAlphabetGroup {
         var group = TTContactsAlphabetGroup()
         for grp in groups {
-            if grp.title == name {
+            if grp.title.uppercased() == name.uppercased() {
                 group = grp
                 break
             }

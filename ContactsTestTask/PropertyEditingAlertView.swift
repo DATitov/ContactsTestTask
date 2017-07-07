@@ -70,6 +70,8 @@ class PropertyEditingAlertView: UIView {
             self.addSubview(view)
         }
         
+        valueTextField.delegate = self
+        
         cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
         saveButton.addTarget(self, action: #selector(saveButtonPressed), for: .touchUpInside)
     }
@@ -97,10 +99,23 @@ extension PropertyEditingAlertView { // MARK: Layout
     
 }
 
+extension PropertyEditingAlertView: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if saveAction != nil {
+            saveAction!(valueTextField.text!)
+        }
+        delegate?.dismiss()
+        return true
+    }
+    
+}
+
 extension PropertyEditingAlertView: DTAlertViewProtocol {
     
     func backgroundPressed() {
-        self.cancelButtonPressed()
+        //self.cancelButtonPressed()
     }
     
 }

@@ -20,7 +20,7 @@ class DataManager: NSObject {
     fileprivate let contactsStorageInteractor: ContactsStorageInteractorProtocol = ContactsStorageInteractorCoreData()
     
     func reactOnAppTermination() {
-        
+        contactsStorageInteractor.reactOnAppTermination()
     }
     
 }
@@ -35,6 +35,10 @@ extension DataManager {
             return contacts
         }
         return contactsStorageInteractor.getAllContacts()
+    }
+    
+    func getContact(forID id: String) -> TTContact? {
+        return contactsStorageInteractor.getContact(forID: id)
     }
     
     func addContact(contact: TTContact) -> Bool {

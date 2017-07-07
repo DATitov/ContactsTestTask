@@ -79,8 +79,16 @@ extension ContactsStorageInteractorCoreData: ContactsStorageInteractorProtocol {
         return contacts
     }
     
+    func getContact(forID id: String) -> TTContact? {
+        guard let managerContact = self.fetchContact(withID: id) else {
+            return nil
+        }
+        
+        return TTContactAndContactEntityParser().ttContact(coreDataContact: managerContact as! ContactEntity)
+    }
+    
     func addContact(contact: TTContact) -> Bool {
-        var contactEntity = NSEntityDescription.insertNewObject(forEntityName: "ContactEntity", into: persistentContainer.viewContext)
+        var contactEntity = NSEntityDescription.insertNewObject(forEntityName: "ContactEntity", into: persistentContainer.viewContext) as! ContactEntity
         TTContactAndContactEntityParser().coreDataContact(ttContact: contact, managedObject: &contactEntity)
         
         do {
@@ -89,6 +97,9 @@ extension ContactsStorageInteractorCoreData: ContactsStorageInteractorProtocol {
             print(error)
             return false
         }
+        
+        //let res = self.getAllContacts()
+        
         return true
     }
     
@@ -115,7 +126,7 @@ extension ContactsStorageInteractorCoreData: ContactsStorageInteractorProtocol {
     }
     
     func deleteContact(withID id: String) -> Bool {
-        guard var contactMO = self.fetchContact(withID: id) else {
+        guard let contactMO = self.fetchContact(withID: id) else {
             return false
         }
         persistentContainer.viewContext.delete(contactMO)
@@ -143,18 +154,18 @@ extension ContactsStorageInteractorCoreData: ContactsStorageInteractorProtocol {
 // MARK: Helpers
 extension ContactsStorageInteractorCoreData {
     
-    func fetchContact(withID id:String) -> NSManagedObject? {
+    func fetchContact(withID id:String) -> ContactEntity? {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "ContactEntity")
         request.predicate = NSPredicate(format: "contactID = %@", argumentArray: [id])
-        guard let managedObjects = { () -> [NSManagedObject]? in
+        guard let managedObjects = { () -> [ContactEntity]? in
             do {
-                return try persistentContainer.viewContext.fetch(request) as? [NSManagedObject]
+                return try persistentContainer.viewContext.fetch(request) as? [ContactEntity]
             } catch let error {
                 print(error)
                 return nil
             }
             }() else {
-            return nil
+                return nil
         }
         
         return managedObjects.count > 0 ? managedObjects[0] : nil

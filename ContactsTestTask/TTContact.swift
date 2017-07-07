@@ -11,7 +11,7 @@ import ObjectMapper
 
 class TTContact: NSObject, Mappable {
     
-    var contactID: String = ""
+    var contactID: String = UUID().uuidString
     var firstName: String = ""
     var lastName: String = ""
     var phoneNumber: String = ""

@@ -27,7 +27,7 @@ class TTContactAndContactEntityParser: NSObject {
         return contact
     }
     
-    func coreDataContact(ttContact: TTContact, managedObject: inout NSManagedObject) {
+    func coreDataContact(ttContact: TTContact, managedObject: inout ContactEntity) {
         managedObject.setValue(ttContact.contactID, forKey: "contactID")
         managedObject.setValue(ttContact.firstName, forKey: "firstName")
         managedObject.setValue(ttContact.lastName, forKey: "lastName")
@@ -39,7 +39,7 @@ class TTContactAndContactEntityParser: NSObject {
         managedObject.setValue(ttContact.zipCode, forKey: "zipCode")
     }
     
-    func coreDataContactUpdate(ttContact: TTContact, managedObject: inout NSManagedObject) {
+    func coreDataContactUpdate(ttContact: TTContact, managedObject: inout ContactEntity) {
         managedObject.setValue(ttContact.firstName, forKey: "firstName")
         managedObject.setValue(ttContact.lastName, forKey: "lastName")
         managedObject.setValue(ttContact.phoneNumber, forKey: "phoneNumber")

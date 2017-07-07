@@ -9,12 +9,12 @@
 import Foundation
 
 protocol LaunchStorageInteractorProtocol {
-    func storageExist() -> Bool
     func getLaunchContacts() -> [TTContact]
 }
 
 protocol ContactsStorageInteractorProtocol {
     func getAllContacts() -> [TTContact]
+    func getContact(forID id: String) -> TTContact?
     func addContact(contact: TTContact) -> Bool
     func addContacts(contacts: [TTContact])
     func updateContact(contact: TTContact) -> Bool

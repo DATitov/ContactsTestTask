@@ -15,8 +15,26 @@ class ContactsTVController: UITableViewController {
     
     let vm = ContactsScreenVM()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vm.relaunch()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initBindings()
+    }
+    
+    func initBindings() {
+        
+        _ = vm.alphabetGroups.asObservable()
+            .subscribeOn(MainScheduler.instance)
+            .subscribe( onNext: { [weak self] (contact) in
+                guard let weakSelf = self else { return }
+                weakSelf.tableView.reloadData()
+            })
+            .disposed(by: disposeBag)        
         
     }
     

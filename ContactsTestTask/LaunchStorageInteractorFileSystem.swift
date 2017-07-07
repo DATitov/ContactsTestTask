@@ -17,10 +17,6 @@ class LaunchStorageInteractorFileSystem: NSObject {
 // MARK: LaunchStorageInteractorProtocol
 extension LaunchStorageInteractorFileSystem: LaunchStorageInteractorProtocol {
     
-    func storageExist() -> Bool {
-        return self.filePath() != nil
-    }
-    
     func getLaunchContacts() -> [TTContact] {
         guard let content = self.fileContent() else {
             return [TTContact]()
