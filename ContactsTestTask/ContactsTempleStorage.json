@@ -1,0 +1,114 @@
+{
+    "contacts" : [
+                  {
+                  "contactID" : "D8C64698-9F5D-4A9A-BCD6-DB06514CEC65",
+                  "firstName" : "Alex",
+                  "lastName" : "Smith",
+                  "phoneNumber" : "89824890387",
+                  "streetAddress1" : "Lenina",
+                  "streetAddress2" : "54 43",
+                  "city" : "Moscow",
+                  "state" : "Moscow",
+                  "zipCode" : "111015"
+                  },
+                  {
+                  "contactID" : "1AE46F9C-F4AB-4ECA-88EA-43E0014E9266",
+                  "firstName" : "Sarah",
+                  "lastName" : "Smith",
+                  "phoneNumber" : "89823704898",
+                  "streetAddress1" : "Lenina",
+                  "streetAddress2" : "54 43",
+                  "city" : "Moscow",
+                  "state" : "Moscow",
+                  "zipCode" : "111015"
+                  },
+                  {
+                  "contactID" : "F3EDE19E-0BC0-4DC2-82B2-04F3682E0DF2",
+                  "firstName" : "Ivan",
+                  "lastName" : "Stepanov",
+                  "phoneNumber" : "89820584903",
+                  "streetAddress1" : "Lenina",
+                  "streetAddress2" : "42 43",
+                  "city" : "Moscow",
+                  "state" : "Moscow",
+                  "zipCode" : "111015"
+                  },
+                  {
+                  "contactID" : "9BDA702C-19BC-4272-AE9E-78AE14851CE0",
+                  "firstName" : "Nazar",
+                  "lastName" : "Kovalenko",
+                  "phoneNumber" : "89829578968",
+                  "streetAddress1" : "Lenina",
+                  "streetAddress2" : "42 13",
+                  "city" : "Moscow",
+                  "state" : "Moscow",
+                  "zipCode" : "111015"
+                  },
+                  {
+                  "contactID" : "EE38DA12-BDB4-4DA9-971B-FFF1B0C08C5D",
+                  "firstName" : "John",
+                  "lastName" : "Oliver",
+                  "phoneNumber" : "89824839001",
+                  "streetAddress1" : "25 Oktyabrya",
+                  "streetAddress2" : "42 13",
+                  "city" : "Moscow",
+                  "state" : "Moscow",
+                  "zipCode" : "111015"
+                  },
+                  {
+                  "contactID" : "424D0F89-7729-41AB-9D8B-082DD7D32717",
+                  "firstName" : "Anastasia",
+                  "lastName" : "Studakova",
+                  "phoneNumber" : "89828677947",
+                  "streetAddress1" : "25 Oktyabrya",
+                  "streetAddress2" : "12 11",
+                  "city" : "Moscow",
+                  "state" : "Moscow",
+                  "zipCode" : "111015"
+                  },
+                  {
+                  "contactID" : "57B1D08D-4909-440A-B927-1D8809368FD4",
+                  "firstName" : "Irina",
+                  "lastName" : "Samarina",
+                  "phoneNumber" : "89824786093",
+                  "streetAddress1" : "25 Oktyabrya",
+                  "streetAddress2" : "12 199",
+                  "city" : "Perm",
+                  "state" : "Permskiy Krai",
+                  "zipCode" : "614015"
+                  },
+                  {
+                  "contactID" : "D516999A-6F09-40DC-B934-C4D1C61C568C",
+                  "firstName" : "Natalie",
+                  "lastName" : "Krasnyaya",
+                  "phoneNumber" : "89827698479",
+                  "streetAddress1" : "25 Oktyabrya",
+                  "streetAddress2" : "85b 10",
+                  "city" : "Perm",
+                  "state" : "Permskiy Krai",
+                  "zipCode" : "614015"
+                  },
+                  {
+                  "contactID" : "8F686BDA-F5D6-49E8-BFFE-BDBFC254A188",
+                  "firstName" : "John",
+                  "lastName" : "Snow",
+                  "phoneNumber" : "89824653812",
+                  "streetAddress1" : "Wind Square",
+                  "streetAddress2" : "11 2",
+                  "city" : "Snowingsk",
+                  "state" : "North",
+                  "zipCode" : "159015"
+                  },
+                  {
+                  "contactID" : "217AE6F0-C2F7-471C-8CB5-A28BD0DE02F6",
+                  "firstName" : "Ivan",
+                  "lastName" : "Krasnov",
+                  "phoneNumber" : "89821265359",
+                  "streetAddress1" : "Sibirskaya",
+                  "streetAddress2" : "100 10",
+                  "city" : "Perm",
+                  "state" : "Permskiy Krai",
+                  "zipCode" : "614015"
+                  }
+    ]
+}
